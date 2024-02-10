@@ -55,3 +55,7 @@ or:
     phpunit -c phpunit.integration.xml
 
 for integration tests
+
+## Para conectarse a un container
+1. `docker ps`
+2. `docker exec -ti 0a5903c2b25f /bin/bash`
