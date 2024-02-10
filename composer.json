@@ -1,0 +1,14 @@
+{
+    "name": "nextcloud/notebook",
+    "authors": [
+        {
+            "name": "Gonzalo Rodriguez"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

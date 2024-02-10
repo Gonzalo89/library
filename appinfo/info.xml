@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <!--
+    SPDX-FileCopyrightText: fruta <fruta@gmail.com>
+    SPDX-License-Identifier: CC0-1.0
+    -->
+    <id>notebook</id>
+    <name>Note Book</name>
+    <summary>http://fruta.com</summary>
+    <description><![CDATA[http://fruta.com]]></description>
+    <version>0.0.2</version>
+    <licence>agpl</licence>
+    <author mail="fruta@gmail.com" homepage="http://fruta.com">fruta</author>
+    <namespace>NoteBook</namespace>
+    <category>tools</category>
+    <bugs>http://fruta.com</bugs>
+    <dependencies>
+        <nextcloud min-version="28" max-version="28"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Note Book</name>
+            <route>notebook.page.index</route>
+        </navigation>
+    </navigations>
+</info>
