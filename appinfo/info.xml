@@ -9,14 +9,14 @@
     <name>Library</name>
     <summary>fruta</summary>
     <description><![CDATA[fruta]]></description>
-    <version>0.0.1</version>
+    <version>0.0.3</version>
     <licence>agpl</licence>
     <author mail="fruta@gmail.com" homepage="https://fruta.com">Gonzalo</author>
     <namespace>Library</namespace>
     <category>tools</category>
     <bugs>https://fruta.com</bugs>
     <dependencies>
-        <nextcloud min-version="28" max-version="28"/>
+        <nextcloud min-version="28" max-version="29"/>
     </dependencies>
     <navigations>
         <navigation>

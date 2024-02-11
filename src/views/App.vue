@@ -98,7 +98,7 @@ export default {
 			const options = {
 				content,
 			}
-			const url = generateOcsUrl('apps/notebook/api/v1/notes/{noteId}', { noteId })
+			const url = generateOcsUrl('apps/library/api/v1/notes/{noteId}', { noteId })
 			axios.put(url, options).then(response => {
 				this.notesById[noteId].content = content
 				this.notesById[noteId].last_modified = response.data.ocs.data.last_modified
@@ -112,7 +112,7 @@ export default {
 			const options = {
 				name,
 			}
-			const url = generateOcsUrl('apps/notebook/api/v1/notes')
+			const url = generateOcsUrl('apps/library/api/v1/notes')
 			axios.post(url, options).then(response => {
 				this.state.notes.push(response.data.ocs.data)
 				this.onClickNote(response.data.ocs.data.id)
@@ -138,7 +138,7 @@ export default {
 			)
 		},
 		deleteNote(noteId) {
-			const url = generateOcsUrl('apps/notebook/api/v1/notes/{noteId}', { noteId })
+			const url = generateOcsUrl('apps/library/api/v1/notes/{noteId}', { noteId })
 			axios.delete(url).then(response => {
 				const indexToDelete = this.state.notes.findIndex(n => n.id === noteId)
 				if (indexToDelete !== -1) {
@@ -157,7 +157,7 @@ export default {
 					selected_note_id: noteId,
 				},
 			}
-			const url = generateUrl('apps/notebook/config')
+			const url = generateUrl('apps/library/config')
 			axios.put(url, options).then(response => {
 			}).catch((error) => {
 				showError(t('notebook', 'Error saving selected note'))
@@ -165,7 +165,7 @@ export default {
 			})
 		},
 		onExportNote(noteId) {
-			const url = generateOcsUrl('apps/notebook/api/v1/notes/{noteId}/export', { noteId })
+			const url = generateOcsUrl('apps/library/api/v1/notes/{noteId}/export', { noteId })
 			axios.get(url).then(response => {
 				showSuccess(t('notebook', 'Note exported in {path}', { path: response.data.ocs.data }))
 			}).catch((error) => {
