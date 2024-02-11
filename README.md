@@ -1,9 +1,9 @@
 <!--
-SPDX-FileCopyrightText: fruta <fruta@gmail.com>
+SPDX-FileCopyrightText: Gonzalo <fruta@gmail.com>
 SPDX-License-Identifier: CC0-1.0
 -->
 
-# Note Book
+# Library
 Place this app in **nextcloud/apps/**
 
 ## Building the app
@@ -55,7 +55,3 @@ or:
     phpunit -c phpunit.integration.xml
 
 for integration tests
-
-## Para conectarse a un container
-1. `docker ps`
-2. `docker exec -ti 0a5903c2b25f /bin/bash`
