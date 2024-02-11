@@ -48,8 +48,6 @@ class NotesController extends OCSController {
             $note = $this->noteMapper->createNote($this->userId, $name, $content);
             return new DataResponse($note);
         } catch (Exception | Throwable $e) {
-         //   echo "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-         //   file_put_contents('/tmp/file1', print_r($e, true), FILE_APPEND);
             return new DataResponse(['error' => $e->getMessage()], Http::STATUS_BAD_REQUEST);
         }
     }
