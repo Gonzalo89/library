@@ -5,6 +5,7 @@
 			@click-note="onClickNote"
 			@export-note="onExportNote"
 			@create-note="onCreateNote"
+			@add-book="onAddBook"
 			@delete-note="onDeleteNote" />
 		<NcAppContent>
 			<MyMainContent v-if="selectedNote"
@@ -120,6 +121,10 @@ export default {
 				showError(t('notebook', 'Error creating note'))
 				console.error(error)
 			})
+		},
+		onAddBook() {
+			console.debug('onAddBook harcoded')
+			this.state.selected_note_id = 2
 		},
 		onDeleteNote(noteId) {
 			console.debug('delete note', noteId)

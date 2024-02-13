@@ -1,11 +1,13 @@
 <template>
 	<NcAppNavigation>
 		<template #list>
-			<NcAppNavigationNew
-                :text="t('library', 'Add Book')"
-            >
-                <template #icon><plus-icon :size="20" /> </template>
-            </NcAppNavigationNew>
+			<router-link :to="'/Empty'">
+				<NcAppNavigationNew
+					:text="t('library', 'Add Book')" @click="$emit('add-book', $event)"
+				>
+					<template #icon><plus-icon :size="20" /> </template>
+				</NcAppNavigationNew>
+			</router-link>
 			<NcAppNavigationNewItem :title="t('notebook', 'Create note')" @new-item="$emit('create-note', $event)">
 				<template #icon>
 					<PlusIcon />
@@ -58,7 +60,7 @@ import NcEmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent.js'
 import NcAppNavigationItem from '@nextcloud/vue/dist/Components/NcAppNavigationItem.js'
 import NcActionButton from '@nextcloud/vue/dist/Components/NcActionButton.js'
 import NcAppNavigationNewItem from '@nextcloud/vue/dist/Components/NcAppNavigationNewItem.js'
-import NcAppNavigationNew from '@nextcloud/vue/dist/Components/NcAppNavigationNew.js';
+import NcAppNavigationNew from '@nextcloud/vue/dist/Components/NcAppNavigationNew.js'
 import ClickOutside from 'vue-click-outside'
 
 export default {
