@@ -8,17 +8,15 @@ Vue.use(VueRouter)
 
 const routes = [
 	{
-		path: '/',
-		component: Home,
-	},
-	{
 		path: '/Empty',
 		component: Empty,
+	},
+	{
+		path: '/',
+		component: Home,
 	},
 ]
 
 export default new VueRouter({
-	mode: 'history',
-	base: generateUrl('/apps/library', ''),
 	routes,
 })
