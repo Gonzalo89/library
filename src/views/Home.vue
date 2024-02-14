@@ -1,18 +1,15 @@
 <template>
 	<div>
-		<NcButton
-			aria-label="Save"
-			type="primary">
-			<template #icon>
-				<Plus
-					:size="20" />
-			</template>
-			Save
-		</NcButton>
 		<NcTextField :value.sync="text1"
 			label="Name">
 			<Magnify :size="20" />
 		</NcTextField>
+		<NcButton
+			aria-label="Save"
+			type="primary"
+			@click="onClick">
+			Save
+		</NcButton>
 	</div>
 </template>
 
@@ -56,7 +53,9 @@ export default {
 	},
 
 	methods: {
-
+		onClick () {
+			console.debug('Value: ' + this.text1);
+		}
 	},
 }
 </script>
