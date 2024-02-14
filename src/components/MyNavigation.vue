@@ -1,14 +1,14 @@
 <template>
 	<NcAppNavigation>
 		<template #list>
-			<router-link :to="'/Empty'">
+			<router-link :to="'/Home'">
 				<NcAppNavigationNew
 					:text="t('library', 'Add Book')" @click="$emit('add-book', $event)"
 				>
 					<template #icon><plus-icon :size="20" /> </template>
 				</NcAppNavigationNew>
 			</router-link>
-			<NcAppNavigationNewItem :title="t('notebook', 'Create note')" @new-item="$emit('create-note', $event)">
+			<NcAppNavigationNewItem :name="t('notebook', 'Create note')" @new-item="$emit('create-note', $event)">
 				<template #icon>
 					<PlusIcon />
 				</template>

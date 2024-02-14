@@ -8,15 +8,9 @@
 			@add-book="onAddBook"
 			@delete-note="onDeleteNote" />
 		<NcAppContent>
-			<MyMainContent v-if="selectedNote"
-				:note="selectedNote"
-				@edit-note="onEditNote" />
-			<NcEmptyContent v-else
-				:title="t('tutorial_5', 'Select a note')">
-				<template #icon>
-					<NoteIcon :size="20" />
-				</template>
-			</NcEmptyContent>
+			<div class="main-content">
+				<router-view></router-view>
+			</div>
 		</NcAppContent>
 	</NcContent>
 </template>
@@ -51,6 +45,7 @@ export default {
 	},
 
 	props: {
+		name: 'App',
 	},
 
 	data() {
@@ -183,5 +178,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// nothing yet
+.main-content {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.content-editable {
+		min-width: 600px;
+		min-height: 200px;
+	}
+}
 </style>

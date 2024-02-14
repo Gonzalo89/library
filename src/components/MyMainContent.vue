@@ -9,7 +9,6 @@
 			:multiline="true"
 			:placeholder="t('notebook', 'Write a note')"
 			@update:value="onUpdateValue" />
-			<router-view></router-view>
 	</div>
 </template>
 
