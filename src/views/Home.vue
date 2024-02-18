@@ -2,7 +2,7 @@
 	<div>
 		<NcTextField :value.sync="text1"
 			label="Name">
-			<Magnify :size="20" />
+			<BookOpen :size="20" />
 		</NcTextField>
 		<NcButton
 			aria-label="Save"
@@ -15,6 +15,7 @@
 
 <script>
 
+import BookOpen from 'vue-material-design-icons/BookOpenBlankVariant.vue'
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
 
@@ -22,6 +23,7 @@ export default {
 	name: 'Home',
 
 	components: {
+		BookOpen,
 		NcTextField,
 		NcButton,
 	},
