@@ -9,7 +9,7 @@
     <name>Library</name>
     <summary>fruta</summary>
     <description><![CDATA[fruta]]></description>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <licence>agpl</licence>
     <author mail="fruta@gmail.com" homepage="https://fruta.com">Gonzalo</author>
     <namespace>Library</namespace>

@@ -7,7 +7,7 @@
 		<NcButton
 			aria-label="Save"
 			type="primary"
-			@click="onClick">
+			@click="$emit('save-book', text1)">
 			Save
 		</NcButton>
 	</div>
@@ -53,9 +53,6 @@ export default {
 	},
 
 	methods: {
-		onClick () {
-			console.debug('Value: ' + this.text1);
-		}
 	},
 }
 </script>

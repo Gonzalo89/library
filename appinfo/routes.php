@@ -17,6 +17,7 @@ return [
     'routes' => [
         ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
         ['name' => 'config#setConfig', 'url' => '/config', 'verb' => 'PUT'],
+        ['name' => 'book#addUserBook', 'url' => '/book/add', 'verb' => 'POST'],
     ],
     'ocs' => [
         ['name' => 'notes#getUserNotes', 'url' => '/api/{apiVersion}/notes', 'verb' => 'GET', 'requirements' => $requirements],

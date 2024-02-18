@@ -9,7 +9,7 @@
 			@delete-note="onDeleteNote" />
 		<NcAppContent>
 			<div class="main-content">
-				<router-view></router-view>
+				<router-view @save-book="onSaveBook"></router-view>
 			</div>
 		</NcAppContent>
 	</NcContent>
@@ -118,8 +118,19 @@ export default {
 			})
 		},
 		onAddBook() {
-			console.debug('onAddBook harcoded')
-			this.state.selected_note_id = 2
+		},
+		onSaveBook(bookName) {
+			const options = {
+				bookName,
+			}
+			console.debug(bookName, 'onSaveBook')
+			axios.post(
+				generateUrl('apps/library/book/add'), { name: bookName }).then(response => {
+				console.debug(response.data.ocs.data, 'response OK')
+			}).catch((error) => {
+				showError(t('library', 'Error SavingBook'))
+				console.error(error)
+			})
 		},
 		onDeleteNote(noteId) {
 			console.debug('delete note', noteId)
@@ -129,7 +140,7 @@ export default {
 				this.deleteNote(noteId)
 			}, 10000)
 			showUndo(
-				t('notebook', '{name} deleted', { name: this.notesById[noteId].name }),
+				t('library', '{name} deleted', { name: this.notesById[noteId].name }),
 				() => {
 					deletionTimer.pause()
 					this.notesById[noteId].trash = false
