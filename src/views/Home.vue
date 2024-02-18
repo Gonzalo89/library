@@ -17,16 +17,12 @@
 
 import NcButton from '@nextcloud/vue/dist/Components/NcButton.js'
 import NcTextField from '@nextcloud/vue/dist/Components/NcTextField.js'
-import Magnify from 'vue-material-design-icons/Magnify'
-import Plus from 'vue-material-design-icons/Plus'
 
 export default {
 	name: 'Home',
 
 	components: {
 		NcTextField,
-		Magnify,
-		Plus,
 		NcButton,
 	},
 

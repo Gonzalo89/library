@@ -3,9 +3,9 @@
 		<template #list>
 			<router-link :to="'/Home'">
 				<NcAppNavigationNew
-					:text="t('library', 'Add Book')" @click="$emit('add-book', $event)"
-				>
-					<template #icon><plus-icon :size="20" /> </template>
+					:text="t('library', 'Add Book')"
+					@click="$emit('add-book', $event)">
+					<template #icon><PlusIcon :size="20" /> </template>
 				</NcAppNavigationNew>
 			</router-link>
 			<NcAppNavigationNewItem :name="t('notebook', 'Create note')" @new-item="$emit('create-note', $event)">

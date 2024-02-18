@@ -18,12 +18,7 @@
 <script>
 import NcContent from '@nextcloud/vue/dist/Components/NcContent.js'
 import NcAppContent from '@nextcloud/vue/dist/Components/NcAppContent.js'
-import NcEmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent.js'
-
-import NoteIcon from '../components/icons/NoteIcon.vue'
-
 import MyNavigation from '../components/MyNavigation.vue'
-import MyMainContent from '../components/MyMainContent.vue'
 
 import axios from '@nextcloud/axios'
 import { generateOcsUrl, generateUrl } from '@nextcloud/router'
@@ -36,11 +31,8 @@ export default {
 	name: 'App',
 
 	components: {
-		NoteIcon,
 		NcContent,
 		NcAppContent,
-		NcEmptyContent,
-		MyMainContent,
 		MyNavigation,
 	},
 
@@ -120,9 +112,6 @@ export default {
 		onAddBook() {
 		},
 		onSaveBook(bookName) {
-			const options = {
-				bookName,
-			}
 			console.debug(bookName, 'onSaveBook')
 			axios.post(
 				generateUrl('apps/library/book/add'), { name: bookName }).then(response => {
