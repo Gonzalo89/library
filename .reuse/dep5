@@ -3,7 +3,7 @@ Upstream-Name: Library
 Upstream-Contact: Gonzalo <fruta@gmail.com>
 Source: https://github.com/nextcloud/profiler
 
-Files: package-lock.json package.json composer.json composer.lock
+Files: package-lock.json package.json composer.json composer.lock SECURITY.md
 Copyright: Gonzalo <fruta@gmail.com>
 License: AGPL-3.0-or-later
 
