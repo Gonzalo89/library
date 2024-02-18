@@ -9,7 +9,7 @@
 			@delete-note="onDeleteNote" />
 		<NcAppContent>
 			<div class="main-content">
-				<router-view @save-book="onSaveBook"></router-view>
+				<router-view @save-book="onSaveBook" />
 			</div>
 		</NcAppContent>
 	</NcContent>
