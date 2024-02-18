@@ -4,7 +4,7 @@ import router from './router.js'
 
 Vue.mixin({ methods: { t, n } })
 
-const VueApp = Vue.extend(App);
+const VueApp = Vue.extend(App)
 new VueApp({
-	router
-}).$mount('#content');
+	router,
+}).$mount('#content')

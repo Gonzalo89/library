@@ -36,10 +36,6 @@ export default {
 		MyNavigation,
 	},
 
-	props: {
-		name: 'App',
-	},
-
 	data() {
 		return {
 			state: loadState('library', 'notes-initial-state'),
