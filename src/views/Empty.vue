@@ -2,7 +2,9 @@
 	<NcEmptyContent
 		:title="t('tutorial_5', 'Select a note')">
 		<template #icon>
-			<NoteIcon :size="20" />
+			<ul>
+				<li v-for="book in books" :key="book.id">{{ book.name }}</li>
+			</ul>
 		</template>
 	</NcEmptyContent>
 </template>
@@ -10,13 +12,13 @@
 <script>
 
 import NcEmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent.js'
-import NoteIcon from '../components/icons/NoteIcon.vue'
+import axios from '@nextcloud/axios'
+import { generateUrl } from '@nextcloud/router'
 
 export default {
 	name: 'Empty',
 
 	components: {
-		NoteIcon,
 		NcEmptyContent,
 	},
 
@@ -25,6 +27,7 @@ export default {
 
 	data() {
 		return {
+			books: []
 		}
 	},
 
@@ -36,13 +39,22 @@ export default {
 	},
 
 	mounted() {
+		this.fetchData();
 	},
 
 	beforeDestroy() {
 	},
 
 	methods: {
-
+		fetchData() {
+			axios.get(generateUrl('apps/library/books'))
+                .then(response => {
+                    this.books = response.data.ocs.data;
+                })
+                .catch(error => {
+                    console.error('Hubo un error al recuperar los libros: ', error);
+                });
+        }
 	},
 }
 </script>

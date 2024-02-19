@@ -18,6 +18,7 @@ return [
         ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
         ['name' => 'config#setConfig', 'url' => '/config', 'verb' => 'PUT'],
         ['name' => 'book#addUserBook', 'url' => '/book/add', 'verb' => 'POST'],
+        ['name' => 'book#getUserBooks', 'url' => '/books', 'verb' => 'GET'],
     ],
     'ocs' => [
         ['name' => 'notes#getUserNotes', 'url' => '/api/{apiVersion}/notes', 'verb' => 'GET', 'requirements' => $requirements],
