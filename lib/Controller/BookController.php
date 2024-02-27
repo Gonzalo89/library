@@ -40,9 +40,9 @@ class BookController extends OCSController {
      * @param string $name
      * @return DataResponse
      */
-    public function addUserBook(string $name): DataResponse {
+    public function addUserBook(string $name, bool $read): DataResponse {
         try {
-            $book = $this->bookMapper->createBook($this->userId, $name);
+            $book = $this->bookMapper->createBook($this->userId, $name, $read);
             return new DataResponse($book);
         } catch (Exception | Throwable $e) {
             return new DataResponse(['error' => $e->getMessage()], Http::STATUS_BAD_REQUEST);
@@ -56,9 +56,9 @@ class BookController extends OCSController {
      * @param string|null $name
      * @return DataResponse
      */
-    public function editUserBook(int $id, ?string $name = null): DataResponse {
+    public function editUserBook(int $id, ?string $name = null, ?bool $read = null): DataResponse {
         try {
-            $book = $this->bookMapper->updateBook($id, $this->userId, $name);
+            $book = $this->bookMapper->updateBook($id, $this->userId, $name, $read);
             return new DataResponse($book);
         } catch (Exception | Throwable $e) {
             return new DataResponse(['error' => $e->getMessage()], Http::STATUS_BAD_REQUEST);

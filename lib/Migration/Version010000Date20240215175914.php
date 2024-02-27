@@ -45,6 +45,10 @@
 					'notnull' => true,
 					'length' => 300,
 				]);
+				$table->addColumn('read', Types::BOOLEAN, [
+					'notnull' => false,
+					'default' => false,
+				]);
 				$table->setPrimaryKey(['id']);
 				$table->addIndex(['user_id'], 'library_book_uid');
 			}

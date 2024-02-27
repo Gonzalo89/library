@@ -78,13 +78,15 @@ class BookMapper extends QBMapper {
     /**
      * @param string $userId
      * @param string $name
+     * @param bool $read
      * @return Book
      * @throws Exception
      */
-    public function createBook(string $userId, string $name): Book {
+    public function createBook(string $userId, string $name, bool $read): Book {
         $book = new Book();
         $book->setUserId($userId);
         $book->setName($name);
+        $book->setRead($read);
         return $this->insert($book);
     }
 
@@ -92,10 +94,11 @@ class BookMapper extends QBMapper {
      * @param int $id
      * @param string $userId
      * @param string|null $name
+     * @param bool $read
      * @return Book|null
      * @throws Exception
      */
-    public function updateBook(int $id, string $userId, ?string $name = null): ?Book {
+    public function updateBook(int $id, string $userId, ?string $name = null, ?bool $read = null): ?Book {
         if ($name === null) {
             return null;
         }
@@ -106,6 +109,9 @@ class BookMapper extends QBMapper {
         }
         if ($name !== null) {
             $book->setName($name);
+        }
+        if ($read !== null) {
+            $book->setRead($read);
         }
         return $this->update($book);
     }

@@ -13,8 +13,8 @@ use OCP\AppFramework\Db\Entity;
  * @method void setName(string $name)
  * @method string getContent()
  * @method void setContent(string $content)
- * @method int getLastModified()
- * @method void setLastModified(int $lastModified)
+ * @method bool getRead()
+ * @method void setRead(bool $read)
  */
 class Book extends Entity implements \JsonSerializable {
 
@@ -22,10 +22,13 @@ class Book extends Entity implements \JsonSerializable {
     protected $userId;
     /** @var string */
     protected $name;
+    /** @var bool */
+    protected $read;
 
     public function __construct() {
         $this->addType('user_id', 'string');
         $this->addType('name', 'string');
+        $this->addType('read', 'bool');
     }
 
     public function jsonSerialize() {
@@ -33,6 +36,7 @@ class Book extends Entity implements \JsonSerializable {
             'id' => $this->id,
             'user_id' => $this->userId,
             'name' => $this->name,
+            'read' => $this->read,
         ];
     }
 }
