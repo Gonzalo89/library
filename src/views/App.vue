@@ -111,7 +111,7 @@ export default {
 			console.debug(bookName, 'onSaveBook 1')
 			console.debug(read, 'onSaveBook 2')
 			axios.post(
-				generateUrl('apps/library/book/add'), { name: bookName, read: read}).then(response => {
+				generateUrl('apps/library/book/add'), { name: bookName, read }).then(response => {
 				console.debug(response.data.ocs.data, 'response OK')
 			}).catch((error) => {
 				showError(t('library', 'Error SavingBook'))

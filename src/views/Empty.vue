@@ -39,7 +39,7 @@ export default {
 	},
 
 	mounted() {
-		this.fetchData();
+		this.fetchData()
 	},
 
 	beforeDestroy() {
@@ -48,13 +48,13 @@ export default {
 	methods: {
 		fetchData() {
 			axios.get(generateUrl('apps/library/books'))
-                .then(response => {
-                    this.books = response.data.ocs.data;
-                })
-                .catch(error => {
-                    console.error('Hubo un error al recuperar los libros: ', error);
-                });
-        }
+				.then(response => {
+					this.books = response.data.ocs.data
+				})
+				.catch(error => {
+					console.error('Hubo un error al recuperar los libros: ', error)
+				})
+		}
 	},
 }
 </script>
