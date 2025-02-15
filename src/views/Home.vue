@@ -1,18 +1,22 @@
 <template>
-	<div>
-		<NcTextField :value.sync="text1"
-			label="Name">
-			<BookOpen :size="20" />
-		</NcTextField>
-		<NcCheckboxRadioSwitch :checked.sync="read">
-			Read
-		</NcCheckboxRadioSwitch>
-		<NcButton
-			aria-label="Save"
-			type="primary"
-			@click="$emit('save-book', text1, read)">
-			Save
-		</NcButton>
+	<div style="display: flex; flex-direction: column;">
+		<div style="display: flex;">
+			<NcTextField :value.sync="text1"
+				label="Name">
+				<BookOpen :size="20" />
+			</NcTextField>
+			<NcCheckboxRadioSwitch :checked.sync="read">
+				ReadCCCCCCCC7
+			</NcCheckboxRadioSwitch>
+		</div>
+		<div>
+			<NcButton
+				aria-label="Save"
+				type="primary"
+				@click="$emit('save-book', text1, read)">
+				Save
+			</NcButton>
+		</div>
 	</div>
 </template>
 
